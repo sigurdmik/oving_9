@@ -8,8 +8,6 @@ class Spiller:
     def __str__(self):
         return f"Spiller {self.nummer} fikk {self.poeng} poeng"
         
-        
-
 class Spørsmål: 
     def __init__(self, spørsmål, alternativer, riktig_svar):
         self.spørsmål = spørsmål
@@ -45,7 +43,6 @@ def create_players():
     
 
 questions = []                                                                      #Listen som vil inneholde alle spørsmålene etter create_questions() har kjørt
-
 def create_questions():
     fila = (open(os.path.join(sys.path[0], "sporsmaalsfil.txt"), "r"))              #Åpner filen
     fil = [] 
@@ -64,7 +61,6 @@ def spill():                                                                    
         spm_nr = i
         svar = []
         for i in range(len(spillere)):
-            spiller = i
             print(f"Spiller {i+1}:")
             if questions[spm_nr].sjekk_svar() == 1:
                 spillere[i].poeng += 1
@@ -77,7 +73,6 @@ def spill():                                                                    
         print("\n")
     for i in range(len(spillere)):
         print(spillere[i])
-
 
 if __name__ == '__main__':
     create_players()
